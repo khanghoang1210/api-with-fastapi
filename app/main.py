@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # models.Base.metadata.create_all(bind=engine)
 
-origins ="https://www.google.com"
+origins =["*"]
 app = FastAPI()
 
 app.add_middleware(
@@ -24,7 +24,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": "This is root"}
+    return {"message": "Hello word"}
 
 
 
